@@ -10,8 +10,8 @@ import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 
 import java.io.IOException;
-
-import org.example.gen.MySqlLexer;
+//
+//import org.example.gen.MySqlLexer;
 
 // Lexer 파일 생성 -> Tokenize -> Parser 파일 생성
 // 생성된 파스트리를 객체로 사용하기 위해서는 antlr4-tools를 설치해야 하는데

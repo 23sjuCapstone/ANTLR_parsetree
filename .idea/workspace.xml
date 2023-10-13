@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db80889b-7f24-4796-860c-0618eed786ec" name="Changes" comment="파싱트리까지 생성만 되는 코드">
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlLexer.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlLexer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParser.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParser.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParserBaseListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParserBaseVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParserListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParserVisitor.java" beforeDir="false" />
-    </list>
+    <list default="true" id="db80889b-7f24-4796-860c-0618eed786ec" name="Changes" comment="파싱트리까지 생성만 되는 코드" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,7 +121,7 @@
       <workItem from="1697213759882" duration="48000" />
       <workItem from="1697213821175" duration="888000" />
       <workItem from="1697214748387" duration="339000" />
-      <workItem from="1697215109660" duration="619000" />
+      <workItem from="1697215109660" duration="928000" />
     </task>
     <task id="LOCAL-00001" summary="MySqlParser class의 파일 상태 변경 후 import 가능하게 만들기 위한 commit">
       <option name="closed" value="true" />
@@ -202,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697214832495</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="파싱트리까지 생성만 되는 코드">
+      <option name="closed" value="true" />
+      <created>1697215737032</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1697215737032</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
