@@ -1,5 +1,5 @@
 // Generated from C:/Users/happy/ANTLR_test/src/main/java/org/example/grammer/MySqlLexer.g4 by ANTLR 4.13.1
-package org.example.grammer;
+package org.example.gen;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;

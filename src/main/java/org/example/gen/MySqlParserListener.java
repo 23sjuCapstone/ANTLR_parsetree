@@ -1,5 +1,5 @@
 // Generated from C:/Users/happy/ANTLR_test/src/main/java/org/example/grammer/MySqlParser.g4 by ANTLR 4.13.1
-package org.example.grammer;
+package org.example.gen;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
