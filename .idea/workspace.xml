@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="db80889b-7f24-4796-860c-0618eed786ec" name="Changes" comment="파싱트리까지 생성만 되는 코드">
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlLexer.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlLexer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlLexer.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParser.interp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParser.tokens" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParserBaseListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParserBaseVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParserListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParserVisitor.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2Wbk98Dad7VJ4Xh5hrqmVy4wrNX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/happy/ANTLR_test/grammer&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\happy\ANTLR_test\src\main\java\org\example\gen" />
+      <recent name="C:\Users\happy\ANTLR_test\src\main\java\org\gen" />
+      <recent name="C:\Users\happy\ANTLR_test\src\main\java\org\gen\grammer2" />
+      <recent name="C:\Users\happy\ANTLR_test\src\main\java\org\example\grammer" />
+      <recent name="C:\Users\happy\ANTLR_test\src\main\java\org" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StandaloneScriptsStorage">
+    <option name="files">
+      <set>
+        <option value="$PROJECT_DIR$/build.gradle.kts" />
+      </set>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="db80889b-7f24-4796-860c-0618eed786ec" name="Changes" comment="" />
+      <created>1697008515783</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697008515783</updated>
+      <workItem from="1697008516772" duration="308000" />
+      <workItem from="1697008838356" duration="5329000" />
+      <workItem from="1697014707377" duration="1518000" />
+      <workItem from="1697028227118" duration="1303000" />
+      <workItem from="1697109892580" duration="3331000" />
+      <workItem from="1697117423518" duration="617000" />
+      <workItem from="1697118773140" duration="188000" />
+      <workItem from="1697119249063" duration="1876000" />
+      <workItem from="1697197843578" duration="5670000" />
+      <workItem from="1697207830644" duration="5623000" />
+      <workItem from="1697213759882" duration="48000" />
+      <workItem from="1697213821175" duration="888000" />
+      <workItem from="1697214748387" duration="339000" />
+      <workItem from="1697215109660" duration="619000" />
+    </task>
+    <task id="LOCAL-00001" summary="MySqlParser class의 파일 상태 변경 후 import 가능하게 만들기 위한 commit">
+      <option name="closed" value="true" />
+      <created>1697211766315</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697211766315</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Grammer file로 Parse Tree 시각화 창으로 확인">
+      <option name="closed" value="true" />
+      <created>1697212909020</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697212909020</updated>
+    </task>
+    <task id="LOCAL-00003" summary="MySqlLexer 클래스 생성">
+      <option name="closed" value="true" />
+      <created>1697212995372</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697212995372</updated>
+    </task>
+    <task id="LOCAL-00004" summary="MySqlParser 클래스 생성">
+      <option name="closed" value="true" />
+      <created>1697213105482</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697213105482</updated>
+    </task>
+    <task id="LOCAL-00005" summary="grammer 디렉토리로 생성된 클래스 옮기기">
+      <option name="closed" value="true" />
+      <created>1697213212169</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1697213212169</updated>
+    </task>
+    <task id="LOCAL-00006" summary="gen 파일 전부 commit">
+      <option name="closed" value="true" />
+      <created>1697214379613</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1697214379613</updated>
+    </task>
+    <task id="LOCAL-00007" summary="gen 파일 전부 commit">
+      <option name="closed" value="true" />
+      <created>1697214457132</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1697214457132</updated>
+    </task>
+    <task id="LOCAL-00008" summary="gen 파일 전부 commit !! 왜">
+      <option name="closed" value="true" />
+      <created>1697214832495</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1697214832495</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="MySqlParser class의 파일 상태 변경 후 import 가능하게 만들기 위한 commit" />
+    <MESSAGE value="Grammer file로 Parse Tree 시각화 창으로 확인" />
+    <MESSAGE value="MySqlLexer 클래스 생성" />
+    <MESSAGE value="MySqlParser 클래스 생성" />
+    <MESSAGE value="grammer 디렉토리로 생성된 클래스 옮기기" />
+    <MESSAGE value="gen 파일 전부 commit" />
+    <MESSAGE value="gen 파일 전부 commit !! 왜" />
+    <MESSAGE value="파싱트리까지 생성만 되는 코드" />
+    <option name="LAST_COMMIT_MESSAGE" value="파싱트리까지 생성만 되는 코드" />
+  </component>
+</project>
