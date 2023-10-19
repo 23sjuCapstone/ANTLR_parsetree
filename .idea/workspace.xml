@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db80889b-7f24-4796-860c-0618eed786ec" name="Changes" comment="파싱트리까지 생성만 되는 코드" />
+    <list default="true" id="db80889b-7f24-4796-860c-0618eed786ec" name="Changes" comment="파싱트리까지 생성만 되는 코드">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -50,48 +58,56 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/happy/ANTLR_test/grammer&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/happy/ANTLR_test/grammer",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\happy\ANTLR_parsetree\src\main\java\org\example\gen" />
+      <recent name="C:\Users\happy\ANTLR_parsetree\target.generated-sources.antlr4" />
+      <recent name="C:\Users\happy\ANTLR_parsetree\src\main\java\org\example\gen\org" />
+      <recent name="C:\Users\happy\ANTLR_parsetree\src\main\java\org\example" />
       <recent name="C:\Users\happy\ANTLR_test\src\main\java\org\example\gen" />
-      <recent name="C:\Users\happy\ANTLR_test\src\main\java\org\gen" />
-      <recent name="C:\Users\happy\ANTLR_test\src\main\java\org\gen\grammer2" />
-      <recent name="C:\Users\happy\ANTLR_test\src\main\java\org\example\grammer" />
-      <recent name="C:\Users\happy\ANTLR_test\src\main\java\org" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="ANTLR_test.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="StandaloneScriptsStorage">
@@ -122,6 +138,20 @@
       <workItem from="1697213821175" duration="888000" />
       <workItem from="1697214748387" duration="339000" />
       <workItem from="1697215109660" duration="928000" />
+      <workItem from="1697271052914" duration="5231000" />
+      <workItem from="1697277961196" duration="633000" />
+      <workItem from="1697278623294" duration="223000" />
+      <workItem from="1697278870977" duration="329000" />
+      <workItem from="1697383919727" duration="1529000" />
+      <workItem from="1697432198680" duration="987000" />
+      <workItem from="1697433670747" duration="4172000" />
+      <workItem from="1697446601926" duration="10516000" />
+      <workItem from="1697519923257" duration="1455000" />
+      <workItem from="1697521449865" duration="6171000" />
+      <workItem from="1697530946902" duration="806000" />
+      <workItem from="1697596029287" duration="379000" />
+      <workItem from="1697685556855" duration="11090000" />
+      <workItem from="1697706564927" duration="6467000" />
     </task>
     <task id="LOCAL-00001" summary="MySqlParser class의 파일 상태 변경 후 import 가능하게 만들기 위한 commit">
       <option name="closed" value="true" />
