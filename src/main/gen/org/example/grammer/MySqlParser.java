@@ -1,22 +1,13 @@
 // Generated from C:/Users/happy/ANTLR_parsetree/src/main/java/org/example/grammer/MySqlParser.g4 by ANTLR 4.13.1
 package org.example.grammer;
-
-import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.atn.ATN;
-import org.antlr.v4.runtime.atn.ATNDeserializer;
-import org.antlr.v4.runtime.atn.ParserATNSimulator;
-import org.antlr.v4.runtime.atn.PredictionContextCache;
+import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
-import org.antlr.v4.runtime.misc.Utils;
-import org.antlr.v4.runtime.tree.ParseTreeListener;
-import org.antlr.v4.runtime.tree.ParseTreeVisitor;
-import org.antlr.v4.runtime.tree.TerminalNode;
-import org.example.gen.MySqlParserListener;
-import org.example.gen.MySqlParserVisitor;
-
-import java.util.ArrayList;
+import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.misc.*;
+import org.antlr.v4.runtime.tree.*;
 import java.util.List;
-
+import java.util.Iterator;
+import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue"})
 public class MySqlParser extends Parser {
@@ -918,6 +909,7 @@ public class MySqlParser extends Parser {
 	}
 
 	@Override
+
 	public Vocabulary getVocabulary() {
 		return VOCABULARY;
 	}
@@ -939,7 +931,7 @@ public class MySqlParser extends Parser {
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
-    @SuppressWarnings("CheckReturnValue")
+	@SuppressWarnings("CheckReturnValue")
 	public static class RootContext extends ParserRuleContext {
 		public TerminalNode EOF() { return getToken(MySqlParser.EOF, 0); }
 		public SqlStatementsContext sqlStatements() {
@@ -15828,7 +15820,7 @@ public class MySqlParser extends Parser {
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MySqlParserVisitor) return ((MySqlParserVisitor<? extends T>)visitor).visitAlterBySetAlgorithm(this);
+			if ( visitor instanceof MySqlParserVisitor ) return ((MySqlParserVisitor<? extends T>)visitor).visitAlterBySetAlgorithm(this);
 			else return visitor.visitChildren(this);
 		}
 	}

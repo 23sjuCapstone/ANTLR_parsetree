@@ -8,6 +8,8 @@ import java.util.Map;
 
 public class CustomVisitor extends MySqlParserBaseVisitor {
 
+    private int plusCount = 0;
+
     @Override
     public Object visitRoot(MySqlParser.RootContext ctx){
         return visitChildren(ctx.parent);
@@ -28,5 +30,14 @@ public class CustomVisitor extends MySqlParserBaseVisitor {
         return keyValue;
     }
 
-
+    public int getPlusCount() {
+        return plusCount;
+    }
+    public Integer visitSqlStatement(MySqlParser.SqlStatementsContext ctx){
+        for(int i=0;;i++){
+            if(ctx.sqlStatement(i) == null) break;
+            plusCount++;
+        }
+        return plusCount;
+    }
 }
