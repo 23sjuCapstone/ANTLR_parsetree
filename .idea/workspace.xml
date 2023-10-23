@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db80889b-7f24-4796-860c-0618eed786ec" name="Changes" comment="말단 노드 접근">
+    <list default="true" id="db80889b-7f24-4796-860c-0618eed786ec" name="Changes" comment="서브 쿼리 개수 파악(일반화 필요함, 경고 해소 ..)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CustomVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CustomVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CountSqlSubquery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CountQueryListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +151,18 @@
       <workItem from="1697596029287" duration="379000" />
       <workItem from="1697685556855" duration="11090000" />
       <workItem from="1697706564927" duration="11933000" />
-      <workItem from="1697789463773" duration="7276000" />
+      <workItem from="1697789463773" duration="9277000" />
+      <workItem from="1697806586586" duration="3798000" />
+      <workItem from="1697812369522" duration="3404000" />
+      <workItem from="1697859149591" duration="1240000" />
+      <workItem from="1697897703507" duration="1134000" />
+      <workItem from="1697898913868" duration="11000" />
+      <workItem from="1697899764916" duration="494000" />
+      <workItem from="1697900448138" duration="1436000" />
+      <workItem from="1697902006154" duration="1877000" />
+      <workItem from="1697977818498" duration="6859000" />
+      <workItem from="1698017200539" duration="1425000" />
+      <workItem from="1698029904835" duration="8533000" />
     </task>
     <task id="LOCAL-00001" summary="MySqlParser class의 파일 상태 변경 후 import 가능하게 만들기 위한 commit">
       <option name="closed" value="true" />
@@ -234,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697723128143</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="서브 쿼리 개수 파악(일반화 필요함, 경고 해소 ..)">
+      <option name="closed" value="true" />
+      <created>1697797647642</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1697797647642</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +279,7 @@
     <MESSAGE value="gen 파일 전부 commit !! 왜" />
     <MESSAGE value="파싱트리까지 생성만 되는 코드" />
     <MESSAGE value="말단 노드 접근" />
-    <option name="LAST_COMMIT_MESSAGE" value="말단 노드 접근" />
+    <MESSAGE value="서브 쿼리 개수 파악(일반화 필요함, 경고 해소 ..)" />
+    <option name="LAST_COMMIT_MESSAGE" value="서브 쿼리 개수 파악(일반화 필요함, 경고 해소 ..)" />
   </component>
 </project>
