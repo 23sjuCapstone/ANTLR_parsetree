@@ -21,8 +21,8 @@ public class Main {
         // 일단은 쿼리문이 단순한 SELECT 문인 경우에 대해 3 단계를 완성해보자 !
 
         // <필요한 3단계>
-        // 1. 쿼리가 몇 개인지 파악
-        // 2. 쿼리 단계별로 output 만들기
+        // 1. 쿼리가 몇 개인지 파악 V
+        // 2. 쿼리 단계별로 output 만들기 (단계별로 만들어야 하는데 순회는
         // 3. 각 쿼리의 구성 요소(column, table, 명령어(?) . . .)를 key value 형식으로 output 만들기
 
 
@@ -33,47 +33,58 @@ public class Main {
         CommonTokenStream commonTokenStream = new CommonTokenStream(mySqlLexer);
         MySqlParser mySqlParser = new MySqlParser(commonTokenStream);
 //        // count steps.. subquery의 개수 출력
-////        MySqlParser.QuerySpecificationContext parseTree = mySqlParser.querySpecification();  // mysqlParser.시작룰(enterRule함수)
-////        MySqlParser.SqlStatementsContext tree = mySqlParser.sqlStatements();
-////        MySqlParser.SqlStatementContext tree = mySqlParser.sqlStatement();
-////        MySqlParser.UnionStatementContext tree = mySqlParser.unionStatement();  // Union 쿼리문은 unionStatement로 startrule 함수 부분 설정하니까 워닝 안생김
-////        MySqlParser.SelectStatementContext tree = mySqlParser.selectStatement();
-//        MySqlParser.RootContext tree = mySqlParser.root();
-//
-//        CountQueryListener listener = new CountQueryListener();
-//        ParseTreeWalker walker = new ParseTreeWalker();
-//        walker.walk(listener, tree);
-//        int startRuleCount = listener.getStartRuleCount();  // 내가 전체 트리를 순회한다고 생각하면서 짠 코드가 트리 전체를 순회하는 코드가 아닌지 다시 확인
-//        System.out.println(startRuleCount);
+//        MySqlParser.QuerySpecificationContext parseTree = mySqlParser.querySpecification();  // mysqlParser.시작룰(enterRule함수)
+//        MySqlParser.SqlStatementsContext tree = mySqlParser.sqlStatements();
+//        MySqlParser.SqlStatementContext tree = mySqlParser.sqlStatement();
+//        MySqlParser.UnionStatementContext tree = mySqlParser.unionStatement();  // Union 쿼리문은 unionStatement로 startrule 함수 부분 설정하니까 워닝 안생김
+//        MySqlParser.SelectStatementContext tree = mySqlParser.selectStatement();
+        MySqlParser.RootContext tree = mySqlParser.root();
+
+        CountQueryListener listener = new CountQueryListener();
+        ParseTreeWalker walker = new ParseTreeWalker();
+        walker.walk(listener, tree);
+        int startRuleCount = listener.getStartRuleCount();  // 내가 전체 트리를 순회한다고 생각하면서 짠 코드가 트리 전체를 순회하는 코드가 아닌지 다시 확인
+        System.out.println(startRuleCount);
 
         // 위에 요소에 접근하는 코드와 관련이 있는 것이었다 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!***
         // 단계별 요구 사항을 실행할 때마다 매번 파스 트리를 생성하는 과정을 거쳐야 하는가 > 그런가보다 (사실 더 효율적인 방법이 있을 거 같긴 함;)
 
 
+
+
         // 2. 쿼리 단계 별로 output string 만들기 (이거는 쿼리 2개인 경우부터 생각해 보는게 나을 듯)
-        System.out.println("<<step 2>>");
-        CharStream charStream1 = CharStreams.fromString("SELECT a.name FROM t_person WHERE a.person in (SELECT b.person FROM grade WHERE grade = 'a')");
+        System.out.println("\n<<step 2>>");
+        CharStream charStream1 = CharStreams.fromString("SELECT a.name FROM t_person WHERE (SELECT b.person FROM grade WHERE grade = 'a')");
         MySqlLexer mySqlLexer1 = new MySqlLexer(charStream1);
         CommonTokenStream commonTokenStream1 = new CommonTokenStream(mySqlLexer1);
         MySqlParser mySqlParser1 = new MySqlParser(commonTokenStream1);
 
-        MySqlParser.RootContext tree2 = mySqlParser.root();  // **** startRule 정확하지 않을 수 있음 !!
+        //MySqlParser.RootContext tree2 = mySqlParser.root();  // **** startRule 정확하지 않을 수 있음 !!
 
         ExtractQueryListener listener1 = new ExtractQueryListener();
-        ParseTreeWalker walker1 = new ParseTreeWalker();
-        walker1.walk(listener1, tree2);
-        String query = listener1.returnQuery();
+//        ParseTreeWalker walker1 = new ParseTreeWalker();
+//        walker1.walk(listener1, tree2);
+        walker.walk(listener1, tree);  // tree는 1단계에서 사용한 tree를 사용해도 됨(새로 만들면 오류 남 ;; 왜 그런건지는 모르겠음 ;;)// /  listener는 새로 만들기
+//        listener1.giveCountNum(listener.startRuleCount);
+        String[] query = listener1.returnQuery();
 
-        System.out.println(query);
+//        System.out.println(query);
 
-//        for(int i=0;i<query.length;i++){
-////            System.out.println("inside query iteration");
-//            if (query[i]!= null)
-//                System.out.println(query[i]);
-//        }
+        for(int i=0;i<query.length;i++){
+//            System.out.println("inside query iteration");
+            if (query[i]!= null)
+                System.out.println(query[i]);
+        }
+
+
+
+
+
+
+
 
         // 3. 쿼리의 구성 요소 key value 형식으로 뽑아내기
-        System.out.println("<<step 3>>");
+        System.out.println("\n<<step 3>>");
         CharStream charStream2 = CharStreams.fromString("SELECT id FROM tb;");
         MySqlLexer mySqlLexer2 = new MySqlLexer(charStream2);
         CommonTokenStream commonTokenStream2 = new CommonTokenStream(mySqlLexer2);

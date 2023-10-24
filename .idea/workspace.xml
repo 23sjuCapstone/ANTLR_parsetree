@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db80889b-7f24-4796-860c-0618eed786ec" name="Changes" comment="서브 쿼리 개수 파악(일반화 필요함, 경고 해소 ..)">
+    <list default="true" id="db80889b-7f24-4796-860c-0618eed786ec" name="Changes" comment="말단 노드 연결해 쿼리 만들기(단계별X)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CountSqlSubquery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CountQueryListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CountQueryListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CountQueryListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ExtractQueryListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ExtractQueryListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +163,10 @@
       <workItem from="1697902006154" duration="1877000" />
       <workItem from="1697977818498" duration="6859000" />
       <workItem from="1698017200539" duration="1425000" />
-      <workItem from="1698029904835" duration="8533000" />
+      <workItem from="1698029904835" duration="15359000" />
+      <workItem from="1698120905445" duration="622000" />
+      <workItem from="1698124167470" duration="962000" />
+      <workItem from="1698126650953" duration="291000" />
     </task>
     <task id="LOCAL-00001" summary="MySqlParser class의 파일 상태 변경 후 import 가능하게 만들기 위한 commit">
       <option name="closed" value="true" />
@@ -252,7 +256,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697797647642</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="말단 노드 연결해 쿼리 만들기(단계별X)">
+      <option name="closed" value="true" />
+      <created>1698039437917</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1698039437917</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +292,7 @@
     <MESSAGE value="파싱트리까지 생성만 되는 코드" />
     <MESSAGE value="말단 노드 접근" />
     <MESSAGE value="서브 쿼리 개수 파악(일반화 필요함, 경고 해소 ..)" />
-    <option name="LAST_COMMIT_MESSAGE" value="서브 쿼리 개수 파악(일반화 필요함, 경고 해소 ..)" />
+    <MESSAGE value="말단 노드 연결해 쿼리 만들기(단계별X)" />
+    <option name="LAST_COMMIT_MESSAGE" value="말단 노드 연결해 쿼리 만들기(단계별X)" />
   </component>
 </project>
