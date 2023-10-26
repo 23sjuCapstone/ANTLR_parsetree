@@ -1,7 +1,7 @@
 package org.example;
 
 import org.example.gen.MySqlParserBaseVisitor;
-import org.example.grammer.MySqlParser;
+import org.example.gen.MySqlParser;
 
 import java.util.HashMap;
 import java.util.Map;

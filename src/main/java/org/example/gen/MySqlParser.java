@@ -1,5 +1,5 @@
 // Generated from C:/Users/happy/ANTLR_parsetree/src/main/java/org/example/grammer/MySqlParser.g4 by ANTLR 4.13.1
-package org.example.grammer;
+package org.example.gen;
 
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.atn.ATN;
@@ -11,8 +11,6 @@ import org.antlr.v4.runtime.misc.Utils;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 import org.antlr.v4.runtime.tree.TerminalNode;
-import org.example.gen.MySqlParserListener;
-import org.example.gen.MySqlParserVisitor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68571,6 +68569,7 @@ public class MySqlParser extends Parser {
 		public SelectStatementContext selectStatement() {
 			return getRuleContext(SelectStatementContext.class,0);
 		}
+
 		public TerminalNode RR_BRACKET() { return getToken(MySqlParser.RR_BRACKET, 0); }
 		public SubqueryExpressionAtomContext(ExpressionAtomContext ctx) { copyFrom(ctx); }
 		@Override

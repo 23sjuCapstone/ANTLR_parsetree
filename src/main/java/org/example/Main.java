@@ -7,7 +7,7 @@ import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import org.example.gen.MySqlLexer;
-import org.example.grammer.MySqlParser;
+import org.example.gen.MySqlParser;
 
 import java.io.IOException;
 import java.util.Map;
@@ -28,7 +28,7 @@ public class Main {
 
         // 1. 쿼리가 몇 개 인지 파악
         System.out.println("<<step 1>>");
-        CharStream charStream = CharStreams.fromString("SELECT a.name FROM t_person WHERE a.person in (SELECT b.person FROM grade WHERE grade = 'a')");
+        CharStream charStream = CharStreams.fromString("SELECT loan_number FROM borrower WHERE customer_name = (SELECT customer_name FROM depositor WHERE account_number = \"A-215\");");
         MySqlLexer mySqlLexer = new MySqlLexer(charStream);  // 구조 자동으로 변경해 주는 노란선 어떡할까
         CommonTokenStream commonTokenStream = new CommonTokenStream(mySqlLexer);
         MySqlParser mySqlParser = new MySqlParser(commonTokenStream);
@@ -54,7 +54,7 @@ public class Main {
 
         // 2. 쿼리 단계 별로 output string 만들기 (이거는 쿼리 2개인 경우부터 생각해 보는게 나을 듯)
         System.out.println("\n<<step 2>>");
-        CharStream charStream1 = CharStreams.fromString("SELECT a.name FROM t_person WHERE (SELECT b.person FROM grade WHERE grade = 'a')");
+        CharStream charStream1 = CharStreams.fromString("SELECT loan_number FROM borrower WHERE customer_name = (SELECT customer_name FROM depositor WHERE account_number = \"A-215\");");
         MySqlLexer mySqlLexer1 = new MySqlLexer(charStream1);
         CommonTokenStream commonTokenStream1 = new CommonTokenStream(mySqlLexer1);
         MySqlParser mySqlParser1 = new MySqlParser(commonTokenStream1);
@@ -85,7 +85,7 @@ public class Main {
 
         // 3. 쿼리의 구성 요소 key value 형식으로 뽑아내기
         System.out.println("\n<<step 3>>");
-        CharStream charStream2 = CharStreams.fromString("SELECT id FROM tb;");
+        CharStream charStream2 = CharStreams.fromString("SELECT a.name FROM t_person WHERE a.person in (SELECT b.person FROM grade WHERE grade = 'a')");
         MySqlLexer mySqlLexer2 = new MySqlLexer(charStream2);
         CommonTokenStream commonTokenStream2 = new CommonTokenStream(mySqlLexer2);
         MySqlParser mySqlParser2 = new MySqlParser(commonTokenStream2);

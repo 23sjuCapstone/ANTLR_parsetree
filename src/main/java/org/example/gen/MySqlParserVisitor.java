@@ -1,7 +1,7 @@
 // Generated from C:/Users/happy/ANTLR_parsetree/src/main/java/org/example/grammer/MySqlParser.g4 by ANTLR 4.13.1
 package org.example.gen;
+
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
-import org.example.grammer.MySqlParser;
 
 /**
  * This interface defines a complete generic visitor for a parse tree produced

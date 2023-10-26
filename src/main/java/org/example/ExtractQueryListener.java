@@ -1,17 +1,17 @@
 package org.example;
 
 import org.example.gen.MySqlParserBaseListener;
-import org.example.grammer.MySqlParser;
+import org.example.gen.MySqlParser;
 
 public class ExtractQueryListener extends MySqlParserBaseListener {
 
     private String[] query = new String[10];
     private int order = 0;
-    public int count=0;
+    public int count = 0; // cou
 
     @Override
     public void enterQuerySpecification(MySqlParser.QuerySpecificationContext ctx){
-        //System.out.println("ENTER QUERY SPECIFICATION");
+        System.out.println("ENTER QUERY SPECIFICATION");
         String string = "";
         String[] word = new String[50];
 
@@ -21,7 +21,12 @@ public class ExtractQueryListener extends MySqlParserBaseListener {
         word[idx++] = ctx.fromClause().FROM().getText();  // fromClause 안에 Where 절 조작 함수들 포함 되어 있음
         word[idx++] = ctx.fromClause().tableSources().tableSource(0).getText(); // table 혹시 여러개면 tableSource(int i) 함수 말고, List<TableSourceContext> 반환하는 tableSource() 사용 ??
         word[idx++] = ctx.fromClause().WHERE().getText();
-        word[idx++] = ctx.fromClause().expression().getText();
+//        if (count == 1){
+//            word[idx++] = ctx.fromClause().expression().getText();
+//        }
+//        else{
+//            word[idx++] = ctx.
+//        }
 //        if(count == 1)
 //            word[idx++] = query[1];
 //        else
@@ -52,14 +57,41 @@ public class ExtractQueryListener extends MySqlParserBaseListener {
 //            query[0] = string;
     }
 
-    @Override
-    public void exitQuerySpecification(MySqlParser.QuerySpecificationContext ctx) {
-
-    }
-//    public void giveCountNum(int count){
-//        this.count = count;
-//        System.out.print(count);
+//    @Override
+//    public void enterSimpleSelect(MySqlParser.SimpleSelectContext ctx) {
+//        String string = "";
+//        String[] word = new String[50];
+//
+//        int idx = 0;
+//        word[idx++] = ctx.querySpecification().SELECT().getText();
+//        word[idx++] = ctx.querySpecification().selectElements().selectElement(0).getText();
+//        word[idx++] = ctx.querySpecification().fromClause().FROM().getText();  // fromClause 안에 Where 절 조작 함수들 포함 되어 있음
+//        word[idx++] = ctx.querySpecification().fromClause().tableSources().tableSource(0).getText(); // table 혹시 여러개면 tableSource(int i) 함수 말고, List<TableSourceContext> 반환하는 tableSource() 사용 ??
+//        word[idx++] = ctx.querySpecification().fromClause().WHERE().getText();
 //    }
+//    @Override
+//    public void enterSubqueryExpressionAtom(MySqlParser.SubqueryExpressionAtomContext ctx){
+//        System.out.println("<< enter SubqueryExpressionAtom >>");
+//
+//        String string = "";
+//        String[] word = new String[50];
+//
+//        int idx = 0;
+//        word[idx++] = ctx.querySpecification().SELECT().getText();
+//        word[idx++] = ctx.querySpecification().selectElements().selectElement(0).getText();
+//        word[idx++] = ctx.querySpecification().fromClause().FROM().getText();  // fromClause 안에 Where 절 조작 함수들 포함 되어 있음
+//        word[idx++] = ctx.querySpecification().fromClause().tableSources().tableSource(0).getText(); // table 혹시 여러개면 tableSource(int i) 함수 말고, List<TableSourceContext> 반환하는 tableSource() 사용 ??
+//        word[idx++] = ctx.querySpecification().fromClause().WHERE().getText();
+//    }
+
+//    @Override
+//    public void exitQuerySpecification(MySqlParser.QuerySpecificationContext ctx) {
+//
+//    }
+////    public void giveCountNum(int count){
+////        this.count = count;
+////        System.out.print(count);
+////    }
 
     public String[] returnQuery(){
         return query;

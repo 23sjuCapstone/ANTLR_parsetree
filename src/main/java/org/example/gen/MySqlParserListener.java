@@ -2,7 +2,7 @@
 package org.example.gen;
 
 import org.antlr.v4.runtime.tree.ParseTreeListener;
-import org.example.grammer.MySqlParser;
+import org.example.gen.MySqlParser;
 
 /**
  * This interface defines a complete listener for a parse tree produced by

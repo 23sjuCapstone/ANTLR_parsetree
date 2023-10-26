@@ -2,7 +2,7 @@
 package org.example.gen;
 
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
-import org.example.grammer.MySqlParser;
+import org.example.gen.MySqlParser;
 
 /**
  * This class provides an empty implementation of {@link MySqlParserVisitor},
