@@ -30,19 +30,18 @@ public class CustomVisitor extends MySqlParserBaseVisitor { // 3단계 visitor
 //    }
 
     @Override
-    public String visitQuerySpecification(MySqlParser.QuerySpecificationContext ctx){
+    public Map<String, String> visitQuerySpecification(MySqlParser.QuerySpecificationContext ctx){
         Map<String, String> keyValue = new HashMap<>();
 
-        return ctx.getChild(1).getText();
-//        String keyword = ctx.SELECT().getText();
-//        String colname = ctx.selectElements().selectElement(0).getText();
-//        String tablename = ctx.fromClause().tableSources().tableSource(0).getText();
-//
-//        keyValue.put("keyword", keyword);
-//        keyValue.put("column", colname);
-//        keyValue.put("table", tablename);
+        String keyword = ctx.SELECT().getText();
+        String colname = ctx.selectElements().selectElement(0).getText();
+        String tablename = ctx.fromClause().tableSources().tableSource(0).getText();
 
-//        return keyValue;
+        keyValue.put("keyword", keyword);
+        keyValue.put("column", colname);
+        keyValue.put("table", tablename);
+
+        return keyValue;
     }
 
     public int getPlusCount() {

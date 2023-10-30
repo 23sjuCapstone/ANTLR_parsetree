@@ -30,7 +30,12 @@ public class ExtractQueryListener extends MySqlParserBaseListener {
         }
 
         for(int i=0; i < idx; i++){
-            string += word[i]+" ";
+            if (i == idx-1){
+                string += word[i];
+            }
+            else{
+                string += word[i]+" ";
+            }
         }
 
         query[qid++] = string;
@@ -52,10 +57,13 @@ public class ExtractQueryListener extends MySqlParserBaseListener {
         word[idx++] = ctx.fromClause().expression().getChild(0).getChild(2).getText();
 
         for(int i=0; i < idx; i++){
-            string += word[i]+" ";
             if (i == idx-1){
                 string += word[i];
             }
+            else{
+                string += word[i]+" ";
+            }
+
         }
 
         query[qid++] = string;

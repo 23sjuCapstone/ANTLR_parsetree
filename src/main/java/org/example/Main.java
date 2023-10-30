@@ -8,6 +8,7 @@ import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import org.example.gen.MySqlLexer;
 import org.example.gen.MySqlParser;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -113,16 +114,14 @@ public class Main {
         CommonTokenStream commonTokenStream2 = new CommonTokenStream(mySqlLexer2);
         MySqlParser mySqlParser2 = new MySqlParser(commonTokenStream2);
 
+        ComponentListener listener2 = new ComponentListener();
+        walker.walk(listener2, tree);
 
+        JSONObject[] component = listener2.returnComponents();
 
-        MySqlParser.QuerySpecificationContext parseTree2 = mySqlParser2.querySpecification();  // mysqlParser.시작룰
-        CustomVisitor visitor2 = new CustomVisitor();
-
-//        Map<String, String> map2 = visitor2.visitQuerySpecification(parseTree2);
-//        map2.forEach((key, value) -> {System.out.println(key + " : " + value);});
-
-//        String st = visitor2.visitQuerySpecification(parseTree2);
-//        System.out.println(st);
-
+        for(int i=0;i<component.length;i++){
+            if (component[i]!= null)
+                System.out.println(component[i]);
+        }
     }
 }
