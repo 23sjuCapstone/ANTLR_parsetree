@@ -2,7 +2,6 @@
 package org.example.gen;
 
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
-import org.example.gen.MySqlParser;
 
 /**
  * This class provides an empty implementation of {@link MySqlParserVisitor},
@@ -4076,6 +4075,7 @@ public class MySqlParserBaseVisitor<T> extends AbstractParseTreeVisitor<T> imple
 	@Override public T visitExpressionAtomPredicate(MySqlParser.ExpressionAtomPredicateContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
+	 *
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>

@@ -6,12 +6,13 @@ import org.example.gen.MySqlParser;
 public class ExtractQueryListener extends MySqlParserBaseListener {
 
     private String[] query = new String[10];
-    private int order = 0;
-    public int count = 0; // cou
+    private int order = 1;
+    public int count = 0;
+    public int qid = 1;
+//    MySqlParser.QuerySpecificationContext ctx = null;
 
-    @Override
-    public void enterQuerySpecification(MySqlParser.QuerySpecificationContext ctx){
-        System.out.println("ENTER QUERY SPECIFICATION");
+
+    public void makeQuery(MySqlParser.QuerySpecificationContext ctx){
         String string = "";
         String[] word = new String[50];
 
@@ -21,16 +22,66 @@ public class ExtractQueryListener extends MySqlParserBaseListener {
         word[idx++] = ctx.fromClause().FROM().getText();  // fromClause 안에 Where 절 조작 함수들 포함 되어 있음
         word[idx++] = ctx.fromClause().tableSources().tableSource(0).getText(); // table 혹시 여러개면 tableSource(int i) 함수 말고, List<TableSourceContext> 반환하는 tableSource() 사용 ??
         word[idx++] = ctx.fromClause().WHERE().getText();
-//        if (count == 1){
-//            word[idx++] = ctx.fromClause().expression().getText();
-//        }
-//        else{
-//            word[idx++] = ctx.
-//        }
-//        if(count == 1)
-//            word[idx++] = query[1];
-//        else
-//            word[idx++] = ctx.fromClause().expression().getText();
+//        word[idx++] = ctx.fromClause().getChild(3).getChild(0).getChild(0).getChild(0).getChild(0).getChild(0).getChild(0).getChild(0).getText();
+        word[idx++] = ctx.fromClause().expression().getChild(0).getChild(0).getText();
+        word[idx++] = ctx.fromClause().expression().getChild(0).getChild(1).getText();
+        if (ctx.fromClause().expression().getChild(0).getChild(1) != null){
+            word[idx++] = "(@)";  // 서브 쿼리 삽입 지점
+        }
+
+        for(int i=0; i < idx; i++){
+            string += word[i]+" ";
+        }
+
+        query[qid++] = string;
+
+    }
+    public void makeSubquery(MySqlParser.QuerySpecificationContext ctx){
+        String string = "";
+        String[] word = new String[50];
+
+        int idx = 0;
+        word[idx++] = ctx.SELECT().getText();
+        word[idx++] = ctx.selectElements().selectElement(0).getText();
+        word[idx++] = ctx.fromClause().FROM().getText();  // fromClause 안에 Where 절 조작 함수들 포함 되어 있음
+        word[idx++] = ctx.fromClause().tableSources().tableSource(0).getText(); // table 혹시 여러개면 tableSource(int i) 함수 말고, List<TableSourceContext> 반환하는 tableSource() 사용 ??
+        word[idx++] = ctx.fromClause().WHERE().getText();
+//        word[idx++] = ctx.fromClause().getChild(3).getChild(0).getChild(0).getChild(0).getChild(0).getChild(0).getChild(0).getChild(0).getText();
+        word[idx++] = ctx.fromClause().expression().getChild(0).getChild(0).getText();
+        word[idx++] = ctx.fromClause().expression().getChild(0).getChild(1).getText();
+        word[idx++] = ctx.fromClause().expression().getChild(0).getChild(2).getText();
+
+        for(int i=0; i < idx; i++){
+            string += word[i]+" ";
+            if (i == idx-1){
+                string += word[i];
+            }
+        }
+
+        query[qid++] = string;
+    }
+
+    public void attachQuery(){
+        StringBuilder stringBuilder = new StringBuilder(query[1]);
+        query[0] = new String(query[1]);
+        query[0]= query[0].replace("@", query[2]);
+//        query[0] = String.valueOf(stringBuilder.insert(query[1].indexOf("@"), query[2]));
+    }
+
+    @Override
+    public void enterQuerySpecification(MySqlParser.QuerySpecificationContext ctx) {
+        //System.out.println("ENTER QUERY SPECIFICATION");
+
+        if (order == 1) {
+            makeQuery(ctx);
+            order = 2;
+        } else {  // if order == 2
+            makeSubquery(ctx);
+
+            attachQuery();
+        }
+
+    }
 
         // 여기서 쿼리문의 종류에 따라 분기 ?? (지금은 in predicate 인 경우) > 분기가 가능한가 > 일단은 이후 쿼리를 앞 쿼리에 붙이는 방식으로 진행 ..(한정적임)
         //System.out.printf("size of children : " + String.valueOf(ctx.fromClause().expression().children.size()));
@@ -38,60 +89,6 @@ public class ExtractQueryListener extends MySqlParserBaseListener {
 //            System.out.printf(pt.get(i).getText());
 //            System.out.printf("one word\n");
 //        }
-//        for(int i = 0;i < children.size();i++){
-//            word[idx++] = children.get(i).getText();
-//        }
-        //word[idx++] = ctx.fromClause().expression().children.toString(); // 더 세부적으로 나눠야 할 것 같은데 > 세부적으로 나누지 않아도 전체 where절 전체 출력
-//        System.out.println(idx);
-        for(int i=0; i < idx; i++){
-            string += word[i]+" ";
-        }
-
-        query[order++] = string;         // expression이 띄어쓰기 없이 나오는 거 수정해야 하는데 ...  >> *** 트리 순회하는 방법에 대해서 더 조사 해봐야 할듯..***
-//        System.out.println(count);
-//        if(count == 0){
-//            count = 1;
-//            query[1]= string;
-//        }
-//        else
-//            query[0] = string;
-    }
-
-//    @Override
-//    public void enterSimpleSelect(MySqlParser.SimpleSelectContext ctx) {
-//        String string = "";
-//        String[] word = new String[50];
-//
-//        int idx = 0;
-//        word[idx++] = ctx.querySpecification().SELECT().getText();
-//        word[idx++] = ctx.querySpecification().selectElements().selectElement(0).getText();
-//        word[idx++] = ctx.querySpecification().fromClause().FROM().getText();  // fromClause 안에 Where 절 조작 함수들 포함 되어 있음
-//        word[idx++] = ctx.querySpecification().fromClause().tableSources().tableSource(0).getText(); // table 혹시 여러개면 tableSource(int i) 함수 말고, List<TableSourceContext> 반환하는 tableSource() 사용 ??
-//        word[idx++] = ctx.querySpecification().fromClause().WHERE().getText();
-//    }
-//    @Override
-//    public void enterSubqueryExpressionAtom(MySqlParser.SubqueryExpressionAtomContext ctx){
-//        System.out.println("<< enter SubqueryExpressionAtom >>");
-//
-//        String string = "";
-//        String[] word = new String[50];
-//
-//        int idx = 0;
-//        word[idx++] = ctx.querySpecification().SELECT().getText();
-//        word[idx++] = ctx.querySpecification().selectElements().selectElement(0).getText();
-//        word[idx++] = ctx.querySpecification().fromClause().FROM().getText();  // fromClause 안에 Where 절 조작 함수들 포함 되어 있음
-//        word[idx++] = ctx.querySpecification().fromClause().tableSources().tableSource(0).getText(); // table 혹시 여러개면 tableSource(int i) 함수 말고, List<TableSourceContext> 반환하는 tableSource() 사용 ??
-//        word[idx++] = ctx.querySpecification().fromClause().WHERE().getText();
-//    }
-
-//    @Override
-//    public void exitQuerySpecification(MySqlParser.QuerySpecificationContext ctx) {
-//
-//    }
-////    public void giveCountNum(int count){
-////        this.count = count;
-////        System.out.print(count);
-////    }
 
     public String[] returnQuery(){
         return query;

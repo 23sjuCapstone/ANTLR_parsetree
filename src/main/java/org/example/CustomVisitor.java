@@ -6,8 +6,7 @@ import org.example.gen.MySqlParser;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CustomVisitor extends MySqlParserBaseVisitor {
-
+public class CustomVisitor extends MySqlParserBaseVisitor { // 3단계 visitor
     private int plusCount = 0;
 
     @Override
@@ -15,19 +14,35 @@ public class CustomVisitor extends MySqlParserBaseVisitor {
         return visitChildren(ctx.parent);
     }
 
+//    @Override
+//    public Map<String, String> visitQuerySpecification(MySqlParser.QuerySpecificationContext ctx){
+//        Map<String, String> keyValue = new HashMap<>();
+//
+//        String keyword = ctx.SELECT().getText();
+//        String colname = ctx.selectElements().selectElement(0).getText();
+//        String tablename = ctx.fromClause().tableSources().tableSource(0).getText();
+//
+//        keyValue.put("keyword", keyword);
+//        keyValue.put("column", colname);
+//        keyValue.put("table", tablename);
+//
+//        return keyValue;
+//    }
+
     @Override
-    public Map<String, String> visitQuerySpecification(MySqlParser.QuerySpecificationContext ctx){
+    public String visitQuerySpecification(MySqlParser.QuerySpecificationContext ctx){
         Map<String, String> keyValue = new HashMap<>();
 
-        String keyword = ctx.SELECT().getText();
-        String colname = ctx.selectElements().selectElement(0).getText();
-        String tablename = ctx.fromClause().tableSources().tableSource(0).getText();
+        return ctx.getChild(1).getText();
+//        String keyword = ctx.SELECT().getText();
+//        String colname = ctx.selectElements().selectElement(0).getText();
+//        String tablename = ctx.fromClause().tableSources().tableSource(0).getText();
+//
+//        keyValue.put("keyword", keyword);
+//        keyValue.put("column", colname);
+//        keyValue.put("table", tablename);
 
-        keyValue.put("keyword", keyword);
-        keyValue.put("column", colname);
-        keyValue.put("table", tablename);
-
-        return keyValue;
+//        return keyValue;
     }
 
     public int getPlusCount() {

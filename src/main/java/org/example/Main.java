@@ -10,8 +10,6 @@ import org.example.gen.MySqlLexer;
 import org.example.gen.MySqlParser;
 
 import java.io.IOException;
-import java.util.Map;
-
 
 public class Main {
 
@@ -53,14 +51,48 @@ public class Main {
 
 
         // 2. 쿼리 단계 별로 output string 만들기 (이거는 쿼리 2개인 경우부터 생각해 보는게 나을 듯)
+
         System.out.println("\n<<step 2>>");
         CharStream charStream1 = CharStreams.fromString("SELECT loan_number FROM borrower WHERE customer_name = (SELECT customer_name FROM depositor WHERE account_number = \"A-215\");");
         MySqlLexer mySqlLexer1 = new MySqlLexer(charStream1);
         CommonTokenStream commonTokenStream1 = new CommonTokenStream(mySqlLexer1);
-        MySqlParser mySqlParser1 = new MySqlParser(commonTokenStream1);
+        MySqlParser mySqlParser1= new MySqlParser(commonTokenStream1);
 
         //MySqlParser.RootContext tree2 = mySqlParser.root();  // **** startRule 정확하지 않을 수 있음 !!
 
+
+        // 그냥 트리 상단부터 생짜 구현
+//        MySqlParser.RootContext tree2 = mySqlParser1.root();
+////        MySqlParser.QuerySpecificationContext tree2 = mySqlParser1.querySpecification();
+//        ExtractQueryVisitor visitor = new ExtractQueryVisitor();
+//        MySqlParser.ExpressionAtomContext tree_2 = tree2.getRuleContext(MySqlParser.ExpressionAtomContext.class, 0);
+//        String st = visitor.visitExpressionAtomPredicate(tree_2);
+////        String st = visitor.visitExpressionAtomPredicate(tree2);
+
+
+        // ExtractQuery Visitor로 시도한 버전 (VisitExpressionAtom 시도한 버전.. StartRule 때문인지 뭐 떄문에 안되는 걸까 !!!!)
+        // MySqlParser.ExpressionAtomContext tree3 = mySqlParser1.expressionAtom();   // [error] : line 1:7 mismatched input 'loan_number' expecting {'.', DOT_ID}
+//        MySqlParser.QuerySpecificationContext tree3 = mySqlParser1.querySpecification();  // 윗줄의 에러는 해소됨, ; 출력 안됌
+        //MySqlParser.RootContext tree3 = mySqlParser1.root();  // 출력 끝에 ; 랑 <EOF> 가 같이 출력
+        //MySqlParser.RootContext tree3 = mySqlParser1.root();
+//        MySqlParser.SelectStatementContext tree3 = mySqlParser1.selectStatement();
+
+//        tree3.getRuleContext(MySqlParser.SubqueryExpressionAtomContext.class, 0);
+          // mysqlParser.시작룰  *** 이걸 적당하게 인자로 가져다 줘야 하는데 . . . .
+//        ExtractQueryVisitor visitor = eac.getR  // getParent해서 다시 내려오는 방법??
+//        ExtractQueryVisitor visitor = new ExtractQueryVisitor();
+
+//        ParseTree pt = tree3.getChild(1);
+//        System.out.println(pt.getText());
+//        ParseTree subtree = pt.getChild(1);
+//        System.out.println(subtree.getText());
+
+//        String str = visitor.visitSubqueryExpressionAtom(tree3.getRuleContext(MySqlParser.SubqueryExpressionAtomContext.class, 0));
+//        System.out.println(str);
+
+
+
+        // ExtractQuery Listener로 시도한 버전
         ExtractQueryListener listener1 = new ExtractQueryListener();
 //        ParseTreeWalker walker1 = new ParseTreeWalker();
 //        walker1.walk(listener1, tree2);
@@ -68,33 +100,29 @@ public class Main {
 //        listener1.giveCountNum(listener.startRuleCount);
         String[] query = listener1.returnQuery();
 
-//        System.out.println(query);
-
         for(int i=0;i<query.length;i++){
-//            System.out.println("inside query iteration");
             if (query[i]!= null)
                 System.out.println(query[i]);
         }
 
 
-
-
-
-
-
-
         // 3. 쿼리의 구성 요소 key value 형식으로 뽑아내기
         System.out.println("\n<<step 3>>");
-        CharStream charStream2 = CharStreams.fromString("SELECT a.name FROM t_person WHERE a.person in (SELECT b.person FROM grade WHERE grade = 'a')");
+        CharStream charStream2 = CharStreams.fromString("SELECT row1 FROM depositor;");
         MySqlLexer mySqlLexer2 = new MySqlLexer(charStream2);
         CommonTokenStream commonTokenStream2 = new CommonTokenStream(mySqlLexer2);
         MySqlParser mySqlParser2 = new MySqlParser(commonTokenStream2);
 
-        MySqlParser.QuerySpecificationContext parseTree = mySqlParser2.querySpecification();  // mysqlParser.시작룰
-        CustomVisitor visitor = new CustomVisitor();
 
-        Map<String, String> map = visitor.visitQuerySpecification(parseTree);
-        map.forEach((key, value) -> {System.out.println(key + " : " + value);});
+
+        MySqlParser.QuerySpecificationContext parseTree2 = mySqlParser2.querySpecification();  // mysqlParser.시작룰
+        CustomVisitor visitor2 = new CustomVisitor();
+
+//        Map<String, String> map2 = visitor2.visitQuerySpecification(parseTree2);
+//        map2.forEach((key, value) -> {System.out.println(key + " : " + value);});
+
+//        String st = visitor2.visitQuerySpecification(parseTree2);
+//        System.out.println(st);
 
     }
 }

@@ -4,27 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db80889b-7f24-4796-860c-0618eed786ec" name="Changes" comment="필요한 세 단계 가장 단순한 버전만 성공 (expression 띄어 쓰기 고쳐야 함)">
+    <list default="true" id="db80889b-7f24-4796-860c-0618eed786ec" name="Changes" comment="ExtractQuery Listenser 말고 Visitor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gen/org/example/grammer/MySqlLexer.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gen/org/example/grammer/MySqlLexer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gen/org/example/grammer/MySqlLexer.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gen/org/example/grammer/MySqlParser.interp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gen/org/example/grammer/MySqlParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gen/org/example/grammer/MySqlParser.tokens" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gen/org/example/grammer/MySqlParserBaseListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gen/org/example/grammer/MySqlParserBaseVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gen/org/example/grammer/MySqlParserListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gen/org/example/grammer/MySqlParserVisitor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CountQueryListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CountQueryListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CustomVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CustomVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ExtractQueryListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ExtractQueryListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ExtractQueryVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ExtractQueryVisitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParserBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParserBaseListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParserBaseVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParserBaseVisitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParserListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParserListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParserVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gen/MySqlParserVisitor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +67,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/happy/ANTLR_test/grammer&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -89,7 +78,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -186,7 +175,16 @@
       <workItem from="1698208997554" duration="419000" />
       <workItem from="1698209464265" duration="5590000" />
       <workItem from="1698235318362" duration="16330000" />
-      <workItem from="1698304301396" duration="462000" />
+      <workItem from="1698304301396" duration="2932000" />
+      <workItem from="1698368085457" duration="3886000" />
+      <workItem from="1698379733218" duration="976000" />
+      <workItem from="1698380775945" duration="8131000" />
+      <workItem from="1698467592495" duration="10066000" />
+      <workItem from="1698480926927" duration="13800000" />
+      <workItem from="1698551598895" duration="13200000" />
+      <workItem from="1698567271591" duration="15000" />
+      <workItem from="1698567304537" duration="564000" />
+      <workItem from="1698642252746" duration="7127000" />
     </task>
     <task id="LOCAL-00001" summary="MySqlParser class의 파일 상태 변경 후 import 가능하게 만들기 위한 commit">
       <option name="closed" value="true" />
@@ -292,7 +290,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698127373628</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="ExtractQuery Listenser 말고 Visitor">
+      <option name="closed" value="true" />
+      <created>1698305291209</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1698305291209</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,6 +328,7 @@
     <MESSAGE value="서브 쿼리 개수 파악(일반화 필요함, 경고 해소 ..)" />
     <MESSAGE value="말단 노드 연결해 쿼리 만들기(단계별X)" />
     <MESSAGE value="필요한 세 단계 가장 단순한 버전만 성공 (expression 띄어 쓰기 고쳐야 함)" />
-    <option name="LAST_COMMIT_MESSAGE" value="필요한 세 단계 가장 단순한 버전만 성공 (expression 띄어 쓰기 고쳐야 함)" />
+    <MESSAGE value="ExtractQuery Listenser 말고 Visitor" />
+    <option name="LAST_COMMIT_MESSAGE" value="ExtractQuery Listenser 말고 Visitor" />
   </component>
 </project>

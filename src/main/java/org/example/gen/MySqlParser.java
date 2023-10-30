@@ -1,4 +1,4 @@
-// Generated from C:/Users/happy/ANTLR_parsetree/src/main/java/org/example/grammer/MySqlParser.g4 by ANTLR 4.13.1
+// Generated from C:/Users/happy/ANTLR_parsetree/src/main/java/org/example/grammer/CustomMySqlParser.g4 by ANTLR 4.13.1
 package org.example.gen;
 
 import org.antlr.v4.runtime.*;
@@ -33161,7 +33161,7 @@ public class MySqlParser extends Parser {
 		}
 	}
 
-	public final QuerySpecificationContext querySpecification() throws RecognitionException {
+	public QuerySpecificationContext querySpecification() throws RecognitionException {
 		QuerySpecificationContext _localctx = new QuerySpecificationContext(_ctx, getState());
 		enterRule(_localctx, 252, RULE_querySpecification);
 		int _la;
@@ -68305,7 +68305,8 @@ public class MySqlParser extends Parser {
 		public ExpressionAtomContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_expressionAtom; }
+
+        @Override public int getRuleIndex() { return RULE_expressionAtom; }
 	 
 		public ExpressionAtomContext() { }
 		public void copyFrom(ExpressionAtomContext ctx) {
